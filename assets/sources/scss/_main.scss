@@ -1,0 +1,1360 @@
+/* Common styles */
+html, body{
+    heigh:100%;
+}
+.all-height { padding-bottom:  309px;  min-height: 100%;}
+
+body {
+    font-family: $main-font;
+    color: $light-gray;
+    background-color: $white;
+    font-size:16px;
+    font-weight: 400;
+}
+
+.container {
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    left: 0;
+    right: 0;
+    padding: 0 10px;
+    overflow: visible;
+}
+.container-sidebar {
+    padding: 0 15px;
+    overflow: hidden;
+    margin-bottom:30px;
+}
+.yes-sidebar {  
+    @include displayflex ( $wrap: nowrap);
+}
+
+h1 {
+  font-size: 32px;
+  font-family: "Open Sans";
+  color: $purple;
+  font-weight: bold;
+  line-height: 1.2;
+    margin-bottom:10px;
+}
+
+h2 {
+    font-size: 24px;
+    color: $purple;
+    font-weight:600;
+    text-align: center;
+}
+
+h3 {
+    font-size: 18px;
+    color: $purple;
+    font-weight:600;
+    text-align: center;
+   
+}
+
+.visually-hidden:not(:focus):not(:active),
+input[type="checkbox"].visually-hidden,
+input[type="radio"].visually-hidden {
+  position: absolute;
+
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+
+  white-space: nowrap;
+
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.bg-blue{
+    background-color: $light-blue;
+}
+
+/*- header -*/
+header{ margin-bottom:0px;}
+.header{
+    @include displayflex ();
+    padding: 5px 10px 5px;
+}
+
+.header-inform{
+    @include displayflex ($direction: column, $justify-content: space-around);
+    & > div:not(.header-inform__row){
+       @include displayflex ();
+    }
+    img{ cursor: pointer;}
+}
+.header-inform__row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    
+    @media (max-width: 767px) {
+        & .menu-button {
+         //   display: none;
+        }
+    }
+}
+.header-phone{
+    @include displayflex ($direction: column);
+    line-height: 1.2;
+    text-align: left;
+    color: $blue;
+    a{
+        font-size: 24px;
+        color: $dark-gray;
+        text-transform: uppercase;
+    }
+    
+}
+.searchform{
+    z-index: 100;
+    margin-left: 10px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid #1a379d;
+    
+    &:hover input[type="text"] {
+        display: block;
+    }
+    
+    input[type="text"]{
+        position: absolute;
+        display: none;
+        top: 110%;
+        left: 0;
+        width: 250px;
+        border: 1px solid rgba(24, 48, 146, 0.502);
+        padding: 12px 40px 12px 25px;
+        outline: none;
+        &:focus{
+            border: 1px solid $dark-gray;
+        }
+    }
+    input[type="submit"]{
+        border: none; background: transparent;
+        background-image: url('../img/ico-search.png');
+        width:21px; 
+        height:21px;
+        z-index: 10;
+        outline: none;
+        &:hover + input[type="text"] {
+            display: block;
+        }
+        &:focus{
+            opacity: 0.5;
+        }
+        
+    }
+    
+}
+
+.header-logo {
+    @include displayflex ();
+    .title {
+        @include displayflex ($direction: column, $justify-content: center);
+        font-size: 25px;
+        font-family: "Open Sans";
+        font-weight: 900;
+        color: $purple;
+        text-align: center;
+        margin-left:15px;
+        span{
+           font-size: 15.457px;
+           color: $blue; 
+           margin-top:12px;
+           font-weight: 400;
+        }
+    }
+}
+
+.header-login {
+    @include displayflex ($direction: column, $justify-content: space-around);
+    .head-user, .head-tur {
+        background-repeat: no-repeat;
+        padding: 15px 25px 15px 45px;
+        cursor: pointer;
+    }
+    .head-user {
+        background-image: url('../img/ico-user.png');
+        background-position: 18px 15px;
+    }
+    .head-tur {
+        background-image: url('../img/ico-forma.png');
+        background-position: 10px 15px;
+    }
+    .head-online { display: none;}
+}
+
+.breadcrumbs {
+    border-bottom: 3px solid  rgb(236, 239, 244);
+    font-size: 14px;
+    font-weight:400;
+    color: $purple;
+    line-height: 1.2;
+    padding: 15px 0;
+    margin-bottom: 15px;
+    a {
+      color: $purple;  
+    }
+}
+
+
+
+/*- main menu -*/
+
+.menu-button {
+    padding: 10px 5px;
+    border: 1px solid #1a379d;
+    cursor: pointer;
+    width: 43px; height: 43px;
+    span {
+        display: block;
+        width: 26px;
+        height: 2px;
+        background: #1a379d;
+        position: relative;
+        margin: 4px auto;
+    }
+
+}
+.glasses {
+    margin-left: 10px;
+    
+    @media (max-width: 767px) {
+      //  margin-left: 0;
+    }
+}
+/* menu drop-left */
+.nav-menu-dark {
+   display: none;
+    position: fixed; z-index: 9999;
+    left:350px;
+    top:0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+   transition: 0.35s;
+}
+.nav-menu {
+    z-index:500;
+    width: 350px;
+    left: -350px; /* прячем меню */
+    height: 100%;
+    position: fixed; top:0;
+    background-color: $dark-blue;
+    color: $white;
+ 
+}
+ul.nav {
+  
+        li {
+           font-size: 16px; 
+           border-right: none;
+           text-align: left;
+           padding: 15px 10px 10px 25px ;
+           a{
+                color: $white;
+                text-transform: none;
+                text-decoration: none;
+                &:hover {
+                    text-decoration: underline;
+                    color: $white;
+                }
+            }
+            &:hover, &.active {
+                background-color: $blue;
+            }
+            &:nth-child(1):hover {
+                background-color: transparent; ;
+            }
+        }
+}
+.menu-close {
+    position: relative;
+    width: 30px; height: 30px;
+    cursor: pointer;
+    &:before {
+        content: "";
+        width: 2px;
+        height: 30px;
+        transform: rotate(45deg);
+        background-color: $white;
+        position: absolute; top:0; left:10px;
+        
+    }
+    &:after {
+        content: "";
+        width: 2px;
+        height: 30px;
+        transform: rotate(-45deg);
+        background-color: $white;
+        position: absolute; top:0; left:10px;
+       
+    }
+}
+
+
+/*- footer -*/
+footer{
+    min-height: 309px;
+    margin-top:-309px;
+    background-color: $dark-blue;
+    color: $white;
+    padding: 55px 0;
+    ul li{
+        list-style: none;
+    }
+    div{
+        @include displayflex ();
+    }
+    .footer-social{
+        @include displayflex ($direction: column, $justify-content: flex-start);
+        position: relative;
+        h2{
+           display: block;
+           margin-bottom: 15px; margin-top:15px;
+           font-size: 16px;
+           line-height: 2.25;
+           color: $white;
+           text-align:left;
+        }
+        ul{
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-between;
+          width: 210px;
+          margin: 0 auto;
+          padding: 0; 
+        }
+        .social-button {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 38px;
+          height: 38px;
+          border-radius: 19px;
+          background-color: $white;
+          background-position: center center;
+          background-repeat: no-repeat;
+          font-size:0;
+          margin: 2px;
+          &.vk{ background-image: url('../img/vk-logo.png');}
+          &.at{ background-image: url('../img/at-logo.png');}
+          &.ya{ background-image: url('../img/yandex-logo.png');}
+          &.pn{ background-image: url('../img/pencil-logo.png');}
+          &.ok{ background-image: url('../img/ok-logo.png');}
+        }
+        button{
+            font-size: 16px;
+            padding: 0 15px;
+            margin-top: 20px;
+            position: absolute;
+            bottom: 0;
+        }
+
+    }
+    .footer-menu{
+        a{
+          color: $white;
+          line-height: 2.25;
+        }
+    }
+    .footer-adress{
+        ul{
+            li{
+                padding-top: 35px ;
+                line-height: 1.714;
+                &:first-child{
+                    font-size:14px;
+                    padding-top: 0;
+                }
+            }
+        }
+    }
+}
+/* and pressa */
+
+.news-date {
+    background-image: url('../img/ico-calendar.png');
+    background-position: 0 3px;
+    background-repeat: no-repeat;
+    padding-left: 20px;
+    color: $light-gray;
+   
+}
+
+.main-news {
+    @include displayflex ($wrap: nowrap);
+    margin-bottom: 40px; margin-top: 30px;
+    position: relative; 
+
+    img {
+        width: 100%;
+        height: 485px;
+        max-height: 485px;
+        position: relative; 
+        object-fit: cover;
+        z-index:1;  
+    }
+    .notes {
+        position: relative; z-index:15;
+        position: absolute;
+        width: 100%; max-height: 485px; height: 485px;
+        top:0;
+        background: -moz-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 1%, rgba(255,255,255,0) 50%, rgba(24,48,146,1) 100%); /* FF3.6-15 */
+        background: -webkit-linear-gradient(top, rgba(255,255,255,0) 0%,rgba(255,255,255,0) 1%,rgba(255,255,255,0) 50%,rgba(24,48,146,1) 100%); /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(to bottom, rgba(255,255,255,0) 0%,rgba(255,255,255,0) 1%,rgba(255,255,255,0) 50%,rgba(24,48,146,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#183092',GradientType=0 ); /* IE6-9 */
+    }
+  
+    .note {
+         position: absolute; z-index:10;
+        bottom: 10px; 
+        left: 10px;
+        
+        color: $white;
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 1.333;
+        max-width: 465px;
+        
+        @media (min-width: 992px) {
+            right: 25px;
+            bottom: 10px;
+        }
+        
+        p{
+            padding: 10px 0;
+        }
+        span {
+            background-image: url('../img/ico-calendar-main.png');
+            background-position: 0 4px;
+            background-repeat: no-repeat;
+            padding-left: 20px;
+           color: #dedede;
+          
+        }
+    }
+    
+     &.press { position: relative;
+        .notes {
+            position: absolute; z-index:15;
+            width: 100%; max-height: 310px; height: 310px;
+            a {width: 100%; height: 100%;}
+        }
+        margin-top: 0;
+        div { width: 100%;
+            img {max-height: 310px;}
+         }
+      //  img {max-height: 310px;} 
+        .note {
+            font-size: 20px;
+            text-transform: uppercase;
+            max-width: 800px;
+        }
+        span {font-size: 18px;}
+        .stick { 
+            position: absolute; z-index:20;
+            font-size:24px;
+            color:#fff;
+            text-decoration: underline;
+            text-align: center;
+            padding: 15px 35px;
+            background: $blue;
+
+        }
+    }
+    .news-prev {
+        @include displayflex ($direction: column );width: 50%;
+        &_item {
+            background: transparent;
+            transition-duration: 0.3s;
+            padding: 20px 30px 20px 20px;
+            position: relative; z-index:10;
+            &:hover {
+                background: rgba(0,0,0,0.2);
+                transition-duration: 0.3s;
+                box-shadow: 54px 0px 0px 0px rgba(0,0,0,0.2);
+
+            }
+            
+            p {
+                padding:10px 0;
+                a{
+                font-size: 16px;
+                color: $purple;
+                line-height: 1.5;
+                font-weight: 600;
+                }
+            }  
+            div { font-size: 14px; }  
+                       
+        }
+        .link-category{
+            
+            margin: 0 30px 25px 0;
+            
+        }
+        hr{
+          border-top: 1px dashed rgb(179, 187, 195);
+          height: 1px;
+        }
+    }
+
+}
+
+.main-news__prev {
+    position: relative;
+    width: 50%;
+    
+    @media (max-width: 991px) {
+        width: 100%;
+    }
+    
+    &::after {
+        content: '';
+        z-index: 1;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 50%;
+        bottom: 0;
+        
+    //    background: linear-gradient(to top, rgba(0,0,0,0.7), rgba(0,0,0,0))
+    }
+}
+
+.news-press {
+    margin-bottom:30px;
+    &__item {
+       @include displayflex($wrap: nowrap);
+       margin: 35px auto;
+        img {
+            max-width: 100%;
+            object-fit: contain;
+            max-height: 205px;
+
+        }
+        div {
+            padding: 0 15px 10px;
+            @include displayflex($direction: column);
+            p .link {
+                color: $purple;
+                font-size: 18px;
+                font-weight: 600;
+                display: inline-block;
+                margin: 10px 0;
+            }
+        }
+    }
+    
+}
+.link-news {
+    color: $purple;
+    font-size: 18px;
+    font-weight: 600;
+    text-decoration: underline;
+}
+
+.artcl-prev {    
+    &__content {
+        width: 100%;
+        
+        & > div {
+            padding: 10px;
+        }
+    }
+    &_item {
+        &:not(:first-child) {
+            @media (min-width: 768px) {
+                margin-left: 23px;
+            }
+        }
+        box-shadow: 0px 3px 7px 0px rgba(162, 162, 162, 0.35);
+        max-width:213px; height: 385px;
+        img { margin-bottom: 20px;}
+        span {
+            color: $light-gray;
+            padding: 15px;
+            background: none;
+        }
+        p {
+            color: $purple;
+            line-height: 1.5;
+            font-weight: 600;
+            padding: 20px 15px ;
+        }
+  
+    }
+}
+
+.artcl-prev_item {
+    &:not(:first-child) {
+            margin-left: 23px;
+        }
+    box-shadow: 0px 3px 7px 0px rgba(162, 162, 162, 0.35);
+    max-width:213px;
+    img { margin-bottom: 20px;}
+    span {
+        color: $light-gray;
+        padding: 15px;
+        background: none;
+    }
+    p a {
+        color: $purple;
+        line-height: 1.5;
+        font-weight: 600;
+        padding: 20px 15px 15px;
+        outline: none;
+    }
+
+}
+
+.tv-translation {
+    box-shadow: 0px 3px 7px 0px rgba(162, 162, 162, 0.35);
+    margin: 65px 0 50px;
+    section{
+        @include displayflex();
+        padding: 25px 0 20px 20px;
+        h2 {margin: 0 0 10px; }
+        h2 + span {
+            font-size:14px;
+        }
+    }
+    .timer {
+        @include displayflex($align-items: center);
+        width: 50%;
+        span {
+            color: $purple;
+            font-weight:600;
+            font-size: 20.426px;
+        }
+    }
+
+}
+
+.deput-select {
+  background-color: $light-blue;
+  box-shadow: 0px 3px 7px 0px rgba(162, 162, 162, 0.35);
+  padding: 50px 25px 55px 20px;
+  .sel-name {
+    width: 260px;
+  }
+  form {
+    @include displayflex();
+    margin-top:25px;
+    margin-bottom: 50px;
+  }
+  .buttons{
+    @include displayflex();
+    margin-top: 30px;
+  }
+  select {
+    color: $dark-gray;
+  }
+}
+
+
+
+.committees {
+    padding: 10px 0; 
+    margin: 60px auto 35px; 
+    h2 {
+        margin: 30px auto;
+    }
+    &_item {
+        border-top: 1px solid rgb(179, 187, 195);
+        .title {
+            position: relative;
+            display: flex;
+            align-items: center;
+           // padding: 35px 0;
+            text-align: center; 
+            font-size:18px;
+            color: $purple;
+
+            width: 50%; height: 100%; min-height: 150px;
+            float: left;
+            p {
+                line-height: 1.333;
+                padding: 15px 65px;
+                cursor: pointer;
+                &.brd-right {border-right: 1px dashed rgb(179, 187, 195);}
+            }
+            .title-hover {
+                @include displayflex($direction: column, $wrap: no-wrap);
+                text-align: left;
+                opacity: 0;
+                position: absolute; top: -5px; left: 0; z-index:5;
+                width: 100%; min-height: 155px; height: auto;
+                background: $white;
+                box-shadow: 0px 3px 7px 0px rgba(162, 162, 162, 0.35);
+                padding-bottom: 0;
+                transition: 0.35s;
+                p {padding: 15px 20px;}
+                span {
+                    font-size: 15px;
+                    color: $light-gray;
+                    padding-left: 20px;
+                }
+                ul {
+                    @include displayflex($wrap: no-wrap);
+                    background-color: $dark-blue;
+                    -webkit-margin-before: 0;
+                    margin-block-start: 0;
+                    -webkit-margin-after: 0;
+                    margin-block-end: 0;
+                    margin-top: auto;
+                   
+                    li {
+                        list-style: none;
+                        padding: 10px 15px;
+                     
+                        a {
+                            color: $white;
+                            padding: 5px 5px 5px 30px;
+                            background-position: left center;
+                            background-repeat: no-repeat;
+                            &.team {background-image: url('../img/ico-team.png');}
+                            &.file {background-image: url('../img/ico-file.png');}
+                            &.network {background-image: url('../img/ico-network.png');}
+                            &.documents {background-image: url('../img/ico-documents.png');}
+                        } 
+                    }
+                }
+                &:hover{ opacity: 1;}
+            }
+        }
+    }
+}
+
+.comm-interv {
+    @include displayflex($wrap: no-wrap);
+    .comments{
+        @include displayflex ( $direction: column); 
+        width: 49%;
+        h2 {
+            text-align: left;
+            margin: 30px 0;
+        }
+        &_item {
+            @include displayflex ($wrap: no-wrap);
+            padding: 0px ;
+            margin-bottom: 20px;
+            background-color: $light-blue;
+            box-shadow: 0px 3px 7px 0px rgba(162, 162, 162, 0.35);
+            img {
+                object-fit: cover;
+                position: relative; 
+                z-index:1;
+                height: 200px;
+            }
+            .comments-prev_item{
+                padding: 20px 20px 20px 25px;
+                flex-grow: 1.2;
+                
+                p {
+                    padding:15px 0;
+                    a{
+                    font-size: 16px;
+                    color: $purple;
+                    line-height: 1.5;
+                    font-weight: 600;
+                    }
+                }
+                span {
+                    background-image: url('../img/ico-calendar.png');
+                    background-position: 0 2px;
+                    background-repeat: no-repeat;
+                    padding-left: 20px;
+                    color: $light-gray;
+                   
+                }
+            }        
+                       
+        }
+    }
+}
+
+.votes {
+    margin:55px auto 45px;
+    padding: 55px 0 40px;
+    .container {
+        @include displayflex();
+    }
+    a {
+
+        color: $purple;
+        font-size: 16px;
+        font-weight:400;
+        text-decoration: underline;
+        margin: 15px auto;
+    }
+}
+.vote {
+    width: 60%;
+    .buttons{
+        @include displayflex($justify-content: flex-start);
+        
+        .btn-sel {
+            width:160px;
+            margin-right: 30px;
+
+            &:last-child {
+                width:190px;
+            }
+        }
+      }
+      p{
+        font-size: 18px;
+        color: $purple;
+        margin: 35px 0 25px;
+        font-weight:500;
+      }
+      .filters{
+        .checkbox-label {
+          margin-bottom: 15px;
+          padding:15px 15px 15px 65px;
+          border: 1px solid rgb(233, 240, 247);
+          background-color: $white;
+          i {
+            left: 25px;
+          }
+        }
+      }
+      .container { padding-right: 0; padding-left: 0; }
+
+}
+
+
+
+.section-site {
+    @include displayflex();
+    margin-bottom:30px;
+    margin-top: 40px;
+    &_item {
+        max-width:160px;
+        &  div:first-child {
+            @include displayflex($justify-content: center, $align-items: center);
+            box-shadow: 0px 3px 7px 0px rgba(162, 162, 162, 0.35);
+            height: 160px;
+            margin-bottom: 30px;
+        }
+        .title {
+          font-size: 16px;
+          color: $dark-gray;
+          text-transform: uppercase;
+          line-height: 1.5;
+          text-align: center;
+          font-weight: 500;
+        }
+    }
+}
+
+  /** page open data news */
+.hrtb {
+    width: 100%;
+    height: 3px; 
+    background: url('../img/hr.png') repeat-y;
+    display: block;
+}
+.section-tabs {
+    h1 {
+        margin-bottom:30px;
+    }
+    .tabs > div, .tabs > input { height: 0; overflow: hidden;} 
+    .tabs {
+        @include displayflex ( );
+        label { 
+            color: $dark-gray;
+            font-size: 24px;
+            font-weight: 500;
+            padding: 35px 10px; 
+            line-height: 28px; cursor: pointer; 
+            position: relative; 
+                 }
+        div { width: 100%;}
+    }
+    
+    .tabs > input[type="radio"] {display: none} 
+    .tabs input[type="radio"]:checked + label { 
+       
+        font-weight: 700;
+        color: $purple;
+        border-bottom: 2px solid $purple;
+     }
+
+    .tabs > input:nth-of-type(1):checked ~ div:nth-of-type(1), 
+    .tabs > input:nth-of-type(2):checked ~ div:nth-of-type(2), 
+    .tabs > input:nth-of-type(3):checked ~ div:nth-of-type(3),
+    .tabs > input:nth-of-type(4):checked ~ div:nth-of-type(4){ 
+        height: auto; overflow: visible;  
+    }
+    .tabs > div {
+        margin-top:30px;
+    }
+    .news {
+        .searchform{
+            position: relative;
+            width: 640px;
+            height: 50px;
+            margin-bottom: 20px;
+            input[type="text"]{
+                border: 2px solid #eceff4;
+                width: 100%;
+                padding: 12px 40px 12px 25px;
+                outline: none;
+                &:focus{
+                    border: 1px solid $dark-gray;
+                }
+            }
+            input[type="submit"]{
+                border: none; background: transparent;
+                background-image: url('../img/ico-search.png');
+                width:21px; height:21px;
+                position: absolute;
+                right:10px; top: 12px;
+                z-index: 10;
+                outline: none;
+                &:focus{
+                    opacity: 0.5;
+                }
+                
+            }
+            
+        }
+        .searchname {
+            position: relative;
+            width: 640px;
+            @include displayflex ( $justify-content: space-between, $align-items: center);
+            input[type="text"]{
+                border: 2px solid #eceff4;
+                width: 130px;
+                padding: 12px 15px ;
+                outline: none;
+                &:focus{
+                    border: 1px solid $dark-gray;
+                }
+            }
+            span {
+                font-size:16px;
+                color: $dark-gray;
+                font-weight: 400;
+            }
+        }
+    }
+    table {
+        width: 90%;
+        margin-top: 30px;
+        margin-bottom: 50px;
+        border: 2px solid #eceff4;
+        th {
+            background-color:$light-blue;
+            vertical-align: middle;
+            text-align: center;
+            font-size:16px;
+            font-weight: 700;
+            height: 50px;
+            padding-left:15px;
+            padding-right:15px;
+            border-right: 2px solid #eceff4;
+             &:nth-child(5) {
+                border-right: none;
+            }
+
+        }
+        td {
+            vertical-align: middle;
+            padding-left: 10px;
+            padding-right: 10px;
+            font-size:14px;
+            height: 95px;
+            border-right: 2px solid #eceff4;
+            &:nth-child(1) {
+                text-align: center;
+            }
+            &:nth-child(3) {
+                text-align: center;
+            }
+            &:nth-child(4) {
+                text-align: center;
+            }
+            &:nth-child(5) {
+                border-right: none;
+            }
+        }
+        .download{
+            background-image: url('../img/ico-download.png');
+            background-position: 100% 0;
+            background-repeat: no-repeat;
+            padding-right: 30px;
+            text-decoration: underline;
+            color: $light-gray;
+            line-height:30px;
+            
+        }
+    }
+  
+    .buttons {
+        @include displayflex ( $justify-content: space-between);
+        margin-top: 15px;
+        width: 90%;
+        .call-back{    
+            background-image: url(../img/ico-email.png);
+            background-position: 25px 7px;
+            background-repeat: no-repeat;
+            padding: 15px 25px 15px 100px;
+            text-align: center;
+        }
+        .call-error{    
+            background-image: url(../img/ico-error.png);
+            background-position: 10px 9px;
+            background-repeat: no-repeat;
+            padding: 15px 10px 15px 50px;
+            text-align: center;
+        }
+    }
+
+}
+
+/** pressa */
+.titles {
+    @include displayflex ( $justify-content: space-between);
+    margin-bottom:10px;
+    h1 {display: inline; }
+    ul {
+      @include displayflex ( $justify-content: space-between);
+      width: 365px;
+      padding: 0;
+
+      list-style: none;
+      .social-button {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 33px;
+          height: 32px;
+
+            &:hover ,
+            &:focus {
+                opacity: .7;
+            }
+        }
+    }
+    
+}
+
+.pagination.pressa {
+    justify-content: flex-end;
+    margin-top:20px;
+    margin-bottom:20px;
+}
+
+.anons-press {
+    @include displayflex ( $justify-content: flex-start, $wrap: wrap);
+
+    &__item {
+        @include displayflex ( $justify-content: space-between, $align-content:space-between,$direction: column);
+        background-color: $white;
+        position: relative;
+        box-shadow: 0px 3px 7px 0px rgba(162, 162, 162, 0.35);
+        max-width: 352px;
+        padding: 20px 25px;
+        margin-bottom: 30px; margin-right: 25px;
+        &:nth-child( 3n - 2),
+        &:nth-child( 4n - 3){
+            background-color:$light-blue;
+        }
+        &:nth-child( 1) {background-color:$white;}
+        color: $gray;
+        p {
+            color: $dark-gray;
+            font-size:18px;
+            margin: 10px 0;
+        }
+        div {
+            @include displayflex ( $justify-content: space-between);
+            &.text-right {
+                @include displayflex ( $justify-content: flex-end);
+            }
+        }
+      .download {
+            background-image: url(../img/ico-download.png);
+            background-position: 100% 50%;
+            background-repeat: no-repeat;
+            padding: 15px 40px 15px 5px;
+            text-decoration: underline;
+            text-transform: uppercase;
+            color: $gray;
+        }
+        .link {
+            padding: 15px  0 ;
+            color: $gray;
+            &.text-right {
+                align-self: flex-end;
+                text-decoration: underline;
+            }
+        }
+        &.gallery{
+            padding: 0;
+            img {
+               object-fit: cover;
+            }
+            .stick {
+                position: absolute; z-index: 20;
+                background: $dark-blue;
+                color: $white;
+                font-size: 24px;
+                padding: 10px 10px 10px 25px;
+            }
+            .note {
+                position: absolute; z-index: 20;
+                bottom: 10px;
+                left: 15px;
+                display: block;
+                p { color: $white; font-size:18px;}
+                .date {
+                   background-image: url('../img/ico-calendar.png');
+                    background-position: 0 3px;
+                    background-repeat: no-repeat;
+                    padding-left: 20px;
+                    color: $light-gray; 
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+
+}
+
+.press-monitoring-date {
+    @include displayflex ( $justify-content: flex-start, $wrap: wrap );
+    margin-bottom:35px;
+    > div { 
+        margin-right: 20px;
+        width: 352px;
+        @include displayflex ( $direction: column);
+        .press-monitoring-date__item{
+            max-width: 352px;
+        //    padding: 20px 25px;
+            margin-bottom:20px;
+           
+            select{
+               width: 352px;
+             //  padding: 20px 25px;
+               background-color: $light-blue;
+               &:focus {
+                   background-image: url('../img/down-arrow-down-up.png');
+                    background-color: #d1dbeb;
+               }
+               option { 
+                padding: 15px 0;
+                    background-color: $white;
+                    &:hover {
+                        background-color: $light-blue;
+                    }
+                    &:checked { 
+                        background-color: #d1dbeb;
+                        background-image: url('../img/down-arrow-down.png');
+                    }
+               }
+            }
+        } 
+    }  
+}
+
+.press-monitoring {
+    @include displayflex ( $justify-content: flex-start, $wrap: wrap );
+    &__item {
+        width: 352px;
+        padding: 30px 65px 25px 35px;
+        margin-bottom:15px;
+        margin-right:20px; 
+        box-shadow: 0px 3px 7px 0px rgba(162, 162, 162, 0.35);
+        @include displayflex ( $wrap: nowrap);
+        span {
+            font-size:14px;
+            color:$gray;
+        }
+        p {
+            font-size:18px;
+            color:$purple;
+            font-weight:500;
+            margin: 20px 0 0;
+        }
+    }
+
+}
+
+
+.container-sidebar {
+	min-height: 600px;
+    .section-tabs {
+        .hrtb {
+            width: 100%;
+            height: 3px; 
+            background: url('../img/hr.png') repeat-y;
+            display: block;
+        }
+        .tabs { 
+            @include displayflex ( );
+            label {
+                color: #4c4c4a;
+                font-size: 22px;
+                font-weight: 500;
+                padding: 10px ;
+                border-bottom: none;
+                line-height: 24px;
+                cursor: pointer;
+                position: relative;
+                width: auto;
+                &:nth-child(1){
+                    padding-left: 0;
+                }
+                &:nth-child(3) {
+                    padding-right: 0;
+                }
+            }
+
+            input[type="radio"]:checked + label { 
+                    font-weight: 700;
+                    color: $purple;
+                    border-bottom: none;
+            }
+            div {
+                width: 100%;
+                margin-top: 5px;
+            }
+        }    
+    }  
+    
+}
+.parlament {
+    &__item {
+        @include displayflex ($align-items: center, $justify-content: flex-start );
+        border-bottom: 2px dashed #eceff4;
+        padding: 10px 20px;
+        a { margin-right: 15px;}
+        span { margin-right: 5px; font-weight: 600;}
+        .date {
+            background-image: url('../img/ico-calendar.png');
+            background-position: 0 3px;
+            background-repeat: no-repeat;
+            padding-left: 20px;
+            color: $light-gray;
+            font-weight: 300;
+        }
+    }
+}
+.tabl-deput {
+    h2 {
+        text-align: left;
+        font-size:24px;
+        margin-bottom:20px;
+    }
+}
+.tabl-deputs {
+    
+    &__item {
+        @include displayflex ($align-items: center, $justify-content: space-between );
+        border-bottom: 2px solid #eceff4;
+        padding: 10px 20px 0;
+        .not {
+            flex-grow:1.2;
+        }
+        div {
+            margin-bottom: 10px;
+            &:first-child { margin-right:20px;}
+        }
+        .download {
+            background-image: url(../img/ico-download.png);
+            background-position: 100% 50%;
+            background-repeat: no-repeat;
+            padding: 15px 40px 15px 5px;
+            text-decoration: underline;
+            text-transform: uppercase;
+            color: $gray;
+        }
+    }
+}
+.select-time{
+    @include displayflex (  $wrap: wrap );
+    margin-bottom: 25px;
+    &__item {
+        width: 352px;
+        
+        select {
+            width: 100%;
+            margin-bottom:10px;
+            background-color: $light-blue;
+               &:focus {
+                   background-image: url('../img/down-arrow-down-up.png');
+                    background-color: #d1dbeb;
+               }
+               option { 
+                padding: 15px 0;
+                    background-color: $white;
+                    &:hover {
+                        background-color: $light-blue;
+                    }
+                    &:checked { 
+                        background-color: #d1dbeb;
+                        background-image: url('../img/down-arrow-down.png');
+                    }
+               }
+        }
+       
+    }
+
+}
+
+.slick-prev.slick-arrow {
+    outline: none;
+    font-size: 0;
+    cursor: pointer;
+    border: solid #183092;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 10px;
+    position: absolute;
+    left: -15px;
+    top: 50%;
+    transform: translateY(-50%) rotate(135deg);    
+    background: none;
+    height: auto;    
+}
+
+.slick-next.slick-arrow {
+    outline: none;
+    font-size: 0;
+    cursor: pointer;
+    border: solid #183092;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 10px;
+    position: absolute;
+    right: -15px;
+    top: 50%;
+    transform: translateY(-50%) rotate(-45deg);    
+    background: none;
+    height: auto;    
+}
+.slick-prev:before, .slick-next:before {
+    font-size: 2px;
+}
+
+.tab-res {
+    display: none;
+    &.active {
+        display: block;
+    }
+}

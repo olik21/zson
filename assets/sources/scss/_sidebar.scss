@@ -1,0 +1,85 @@
+.sidebar {
+    width: 100%;
+    height: 100%;
+    @include displayflex ($direction: column, $justify-content: flex-start);
+  //  float:left;
+
+	&#{&}--float {
+		@media (min-width: 768px) {
+			float: left;
+		}
+
+		& .menu {
+			padding: 0;
+		}
+
+		& .menu > ul {
+			margin: 0;
+		}
+	}
+
+    .menu {
+    	background-color: $dark-blue;
+    	padding: 25px 0;
+    	margin-bottom:30px;
+    	ul {
+    		li {
+    			padding: 15px 0;
+    			list-style: none;
+    			a {
+    				color: $white;
+    				font-size: 16px;
+                    padding: 0 15px;
+                    line-height: 1.5;
+                    display: block;
+    			}
+                &:hover, &.active { background: $blue;
+                    a {
+                        text-decoration: underline;
+                    }
+                }
+
+    		}
+    	}
+    }
+	.title {
+		font-size:24px;
+		color: $blue;
+		font-weight: 500;
+		margin-bottom: 20px;
+	}
+    .contact {
+    	background-color: $light-blue;
+    	padding: 25px 20px;
+    	.adress, .phone, .mail {
+    		font-size: 16px;
+    		font-weight:400;
+    		line-height: 1.5em;
+    		text-align: center;
+    		background-position: top center;
+            background-repeat: no-repeat;
+            padding: 50px 0 35px;
+
+    	}
+    	.adress { background-image: url(../img/cont-placeholder.png);}
+    	.phone { background-image: url(../img/cont-phone-call.png);}
+    	.mail { background-image: url(../img/cont-mail.png);}
+    }
+}
+@media (max-width: 767px) {
+    .sidebar {
+        margin-bottom: 25px;
+    }
+}
+
+.sidebar__card {
+	padding: 25px 15px;
+	box-shadow: 0 1px 9px 1px #ececec;
+	background-color: #ffffff;
+
+	color: #282727;
+	font-size: 16px;
+	line-height: 24px;
+
+	margin-bottom: 20px;
+}

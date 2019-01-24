@@ -1,0 +1,50 @@
+/*
+@font-face {
+    font-family: 'Lato';
+    src: url('../fonts/Lato/Lato-Medium') format('woff2');
+    src: url('../fonts/Lato/Lato-Medium.woff') format('woff');
+    font-style: normal;
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: 'Lato';
+    src: url('../fonts/Lato/Lato-Semibold') format('woff2');
+    src: url('../fonts/Lato/Lato-Semibold.woff') format('woff');
+    font-style: normal;
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: 'Lato';
+    src: url('../fonts/Lato/Lato-Bold') format('woff2');
+    src: url('../fonts/Lato/Lato-Bold.woff') format('woff');
+    font-style: normal;
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: 'Lato';
+    src: url('../fonts/Lato/Lato-Heavy') format('woff2');
+    src: url('../fonts/Lato/Lato-Heavy.woff') format('woff');
+    font-style: normal;
+    font-weight: 800;
+}
+
+@font-face {
+    font-family: 'Lato';
+    src: url('../fonts/Lato/Lato-Black') format('woff2');
+    src: url('../fonts/Lato/Lato-Black.woff') format('woff');
+    font-style: normal;
+    font-weight: 900;
+}*/
+@font-face {
+    font-family: 'GOST';
+    src: url('../fonts/GOST-2304-81typeB.eot');
+    src: local('GOST 2.304-81 type B'), local('GOST-2.304-81typeB'),
+        url('../fonts/GOST-2304-81typeB.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/GOST-2304-81typeB.woff') format('woff');
+        
+    font-weight: normal;
+    font-style: normal;
+}

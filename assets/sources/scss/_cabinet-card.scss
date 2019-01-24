@@ -1,0 +1,43 @@
+.cabinet-card {
+    width: 100%;
+    max-width: 350px;
+    padding: 30px;
+    margin-bottom: 30px;
+    border-radius: 4px;
+    background-color: #f4f7fb;
+
+    @media (min-width: 992px) {
+        float: left;
+    }
+}
+
+.cabinet-card__info {
+    display: block;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 32px;
+
+    li {
+        margin-bottom: 30px;
+        color: #3b4256;
+    }
+
+    & b {
+        display: inline-block;
+
+        color: #848e99;
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 32px;
+    }
+
+    & a {
+        display: inline-block;
+        color: #3b4256;
+        text-decoration: none;
+    }
+}

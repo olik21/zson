@@ -1,0 +1,93 @@
+.container-sidebar.monitoring {
+    width: 100%;
+    padding: 0 0 50px 0;
+
+    @media (min-width: 992px) {
+        float: left;
+        max-width: 100%;
+        padding: 0 10px 50px 10px;
+    }
+
+    @media (min-width: 1200px) {
+        max-width: 990px;
+        padding: 0 30px 50px 30px;
+    }
+}
+
+.monitoring__input-wrapper {
+    position: relative;
+
+    margin-bottom: 30px;
+}
+
+.input-wrapper__input:not([type=file]).monitoring__input {
+    padding: 15px 45px 15px 15px;
+}
+
+.monitoring__search-btn {
+    padding: 0;
+    margin: 0;
+    background-color: transparent;
+    font-size: 0;
+
+    position: absolute;
+    top: 14px;
+    right: 20px;
+
+    width: 23px;
+    height: 22px;
+
+    background-image: url(../img/loupe.png);
+}
+
+.monitoring__table-container {
+    overflow-x: auto;
+}
+
+.monitoring__table {
+    margin-bottom: 50px;
+
+    @media (min-width: 992px) {
+        width: 930px;
+    }
+
+    & th {
+        background-color: #f4f6fb;
+        padding: 10px 10px;
+        color: #3b4256;
+        font-size: 16px;
+        font-weight: 700;
+        text-align: center;
+
+        border: 2px solid #eceff4;
+
+        @media (min-width: 768px) {
+            padding: 25px 40px;
+            font-size: 18px;
+        }
+    }
+
+    & td {
+        color: #3b4256;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 16px;
+        border: 2px solid #eceff4;
+
+        padding: 20px 10px;
+
+
+        @media (min-width: 768px) {
+            font-size: 14px;
+            line-height: 16px;
+            padding: 20px 20px 20px 40px;
+        }
+
+
+        &:nth-child(3) {
+            padding: 20px 10px;
+            text-align: center;
+        }
+    }
+
+}

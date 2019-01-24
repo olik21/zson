@@ -1,0 +1,129 @@
+.container-sidebar.symbolics {
+    width: 100%;
+    padding: 0 0 50px 0;
+
+    @media (min-width: 992px) {
+        float: left;
+        max-width: 100%;
+        padding: 0 10px 50px 10px;
+    }
+
+    @media (min-width: 1200px) {
+        max-width: 1180px;
+        padding: 0 30px 50px 30px;
+    }
+}
+
+.symbolics__columns {
+    display: flex;
+    flex-direction: column;
+
+    &#{&}--only {
+        @media (min-width: 992px) {
+            justify-content: center;
+        }
+    }
+
+    @media (min-width: 992px) {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+.symbolics__block {
+    margin-bottom: 50px;
+
+    @media (min-width: 992px) {
+        max-width: calc(50% - 15px);
+    }
+
+    &:nth-child(2) {
+        @media (min-width: 992px) {
+            margin-left: 30px;
+        }
+    }
+}
+
+.symbolics__title  {
+    color: #3b4256;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 30px;
+
+    text-align: center !important;
+    margin: 0 auto 20px auto;
+}
+
+.symbolics__figure {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: -1px 2px 18px 1px rgba(162, 162, 162, 0.35);
+    background-color: #ffffff;
+
+    padding: 20px;
+    margin-bottom: 30px;
+}
+
+.symbolics__image {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+.symbolics__manage-row {
+    display: flex;
+    align-items: center;
+
+    margin-bottom: 20px;
+
+    .selectric {
+        background-position: 90% center;
+    }
+}
+
+.symbolics__label {
+    color: #848e99;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 24px;
+}
+
+.symbolics__input-wrapper {
+    margin-bottom: 30px;
+}
+
+.symbolics__manage-row .symbolics__input-wrapper {
+    margin-left: auto;
+    width: 100px;
+
+    margin-bottom: 0;
+}
+
+.symbolics__download-link {
+    flex-shrink: 0;
+    margin-left: 20px;
+    padding-top: 5px;
+}
+
+.symbolics__image-description {
+    color: #3b4256;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 30px;
+
+    margin-bottom: 20px;
+}
+
+.symbolics__more-link {
+    color: #848e99;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 28px;
+    text-decoration: underline;
+
+    &:hover,
+    &:focus {
+        text-decoration: none;
+    }
+}

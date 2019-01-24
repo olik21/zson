@@ -1,0 +1,7 @@
+.tabs__tab {
+    display: none;
+
+    &.active {
+        display: flex;
+    }
+}

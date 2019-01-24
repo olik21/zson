@@ -1,0 +1,355 @@
+/*- main menu -*/
+
+.main-menu {
+    &.sticky-menu { position: fixed; top:0; z-index: 999; width: 100% ;}
+    .menu-button-js { display: none;    }
+   
+      background-color: $dark-blue;
+    
+    ul {
+        @include displayflex ();
+        min-height: 65px;
+        > li{
+            vertical-align: middle;
+            text-align: center;
+            line-height: 1.2;
+            font-size: 14px;
+            border-right: 1px solid #3377ff;
+            padding: 25px 15px;
+            list-style: none;
+            margin: 0;
+            display: block;
+            text-align: center;
+            flex-shrink: 0;
+            flex-grow: 1;
+            &:hover {background-color: $blue;}
+            &.two-str-mobi{
+               padding: 15px 15px; 
+            }
+            &:last-child{
+                border-right: none;
+                padding-right: 0;
+            }
+         
+            a{
+                color: $white;
+                text-transform: uppercase;
+                &.btn{
+                    text-transform: none;
+                    font-size: 14px;
+                    padding:18px 10px;
+                }
+
+            }
+           
+        }
+
+    }
+}
+
+.br-two-str { display: none; }
+.dws-menu *{
+ margin: 0;
+ padding: 0;
+}
+
+.dws-menu > ul{
+ display: flex;
+ justify-content: center;
+}
+.dws-menu > ul li{
+ position: relative;
+}
+
+.dws-menu > ul li a{
+ display: block;
+ //padding: 10px 15px;
+ text-decoration: none;
+ text-transform:uppercase;
+ transition: all 0.3s ease;
+}
+.dws-menu li a:hover{
+
+ transition: all 0.3s ease;
+}
+
+/*  sub menu  */
+@media(min-width: 768px){
+    ul li.arrow-down {
+        &:after {
+            content: '';
+            position: absolute;
+            right: 5px;
+            top: 25px;
+            -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+            border: solid #fff;
+            border-width: 0 2px 2px 0;
+            padding: 3px;
+            vertical-align: middle;
+            transform: rotate(-45deg);
+            -webkit-transform: rotate(-45deg);
+            transition-duration: 0.3s;
+        }
+    }
+    ul li.arrow-down-up {
+        &:after {
+            content: '';
+            position: absolute;
+            right: 15px;
+            top: 25px;
+            -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+            border: solid #fff;
+            border-width: 0 2px 2px 0;
+            padding: 3px;
+            vertical-align: middle;
+            transform: rotate(45deg);
+            -webkit-transform: rotate(45deg);
+            transition-duration: 0.3s;
+        }
+    }
+}
+
+
+.dws-menu label.toggleSubmenu .fa:before{
+  content: "\f0d7";
+  color: #fff;
+ }
+.dws-menu label.toggleSubmenu .fa{
+  position: absolute;
+  top: 15px;
+  right: 30px;
+ }
+ .dws-menu input.toggleSubmenu:checked ~ label.toggleSubmenu .fa::before{
+  content: "\f0d8";
+  color: #ffffff;
+ }
+
+.dws-menu li { 
+
+    
+    @media(min-width: 768px){
+        > ul{
+         position: absolute; z-index:1000;
+         left:-100px; top:64px;
+         min-width: 370px;
+         background-color: #1a549d;
+         display: none;
+         border-right: none!important;
+        }  
+        &:nth-child(1) ul{
+            min-width: 30px;
+            width: auto;
+            left:0;
+            li {
+                width: 100%;
+                ul {
+                    left:100%; top:0; min-width: 400px;
+                    background-color: $blue;
+                    li { width: 50%; border:none!important;
+                        &:nth-child(2n){border-left: 1px solid $light-blue!important;}
+                    }
+                }
+            }
+        }
+        &:nth-child(2) ul{
+            min-width: 370px;
+            width: auto;
+            left:0;
+            & li {
+            //   width: 50%;
+                ul {
+                    left:100%; top:0; min-width: 400px;
+                    background-color: $blue;
+                    li { width: 50%; border:none!important;
+                        &:nth-child(2n){border-left: 1px solid $light-blue!important;}
+                    }
+                }
+            }
+        }
+       
+        &:nth-child(4) > ul{
+            min-width: 700px;
+            width: auto;
+            left:-250px;
+            @media(max-width: 991px) {
+                min-width:  630px;
+                left: -280px; 
+            }
+            & li {
+                width: 33.3333%;
+                &:not(:nth-child(3n + 4) ){
+                    border-left: 1px solid $light-blue;
+                }
+                &:nth-child(1) { border-left:none; }
+            
+                ul {
+                    left:100%; top:0;
+                    background-color: $blue;
+                    li { width: 50%; border:none!important;
+                        &:nth-child(2n){border-left: 1px solid $light-blue!important;}
+                    }
+                }
+                @media (max-width: 1199px){
+                    ul {
+                        left:0; top:87%; max-width: 200px;
+                        li { width: 100%; border:none!important;
+                            &:nth-child(2n){border-left: none!important;}
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+.dws-menu li > ul {
+
+    li{
+        padding: 10px 15px 10px 10px;
+        @media(min-width: 768px){
+         width: 50%;
+       }
+
+        &:hover {
+            background-color: $dark-blue;
+        }
+    }
+    
+ 
+}
+.dws-menu li > ul li a{
+// padding: 10px;
+ text-transform: none;
+// background: #e4e4e5;
+}
+.dws-menu li > ul li ul{
+ position: absolute;
+ right: -150px;
+ top: 0;
+}
+.dws-menu li:hover > ul{
+// display: block;
+  @include displayflex ($wrap: wrap, $justify-content: center);
+}
+
+.dws-menu [type="checkbox"],
+.dws-menu label.toggleSubmenu{
+ display: none;
+}
+.dws-menu label.toggleMenu{
+ 
+// background: rgb(201,201,201); 
+ display: none;
+ padding: 15px 40px;
+ text-transform: uppercase;
+ font-size: 14px;
+ cursor: pointer;
+ position: relative;
+}
+
+.dws-menu label.toggleMenu .fa{
+ position: absolute;
+ top: 15px;
+ left: 12px;
+ font-size: 18px;
+}
+
+/********************/
+@media all and (min-width: 768px){
+    .dws-menu label.toggleSubmenu { 
+        display: block;
+        .fa {
+            right: 5px; 
+            top: 40%;
+            @media(max-width: 992px){
+                top:15px;
+            }
+        }
+    }
+}
+
+@media all and (max-width: 767px)
+{
+
+ .main-menu ul li,
+ .main-menu ul li.two-str-mobi ,
+ .main-menu ul li.two-str { padding:  0px!important;  }  
+ .main-menu ul > li { 
+    text-align: left;
+    &:hover {
+       background-color:  #1a549d;
+    }
+} 
+ .dws-menu{
+  overflow: hidden;
+ }
+ .dws-menu li:hover > ul {display: none;}
+ div.dws-menu ul{
+  display: block;
+  display: none;
+
+  max-height: 0; min-height: 0;
+  transition: max-height 0.3s;
+  li { 
+    border-right: none; padding:5px 0px; 
+    a { padding: 15px; }
+  }
+  
+ }
+ div.dws-menu li > ul li ul{
+  position: absolute;
+  right: auto;
+  top: auto;
+ }
+ div.dws-menu label.toggleMenu{
+  display: block;
+ }
+ input.toggleMenu:checked + label.toggleMenu{
+  background: rgba(0,0,0, .3);
+  color: #fff;
+ }
+ input.toggleMenu:checked ~ ul,
+ input.toggleSubmenu:checked ~ ul{
+  display: block;
+  position: relative;
+  max-height: 5000px;
+  transition: max-height 2s ease-in;
+  background: #1a549d;
+ }
+ div.dws-menu label.toggleSubmenu{
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  display: block;
+ }
+ input.toggleSubmenu:checked ~ a{
+  background: $blue;
+  color: #fff;
+
+ }
+ .toggleSubmenu + ul { padding-left: 25px; }
+ input.SubmenuPodmenu:checked ~ a{
+  background: #1a359d;
+  color: #fff;
+  padding-left: 20px;
+  
+ }
+
+ .dws-menu label.toggleSubmenu .fa:before{
+  content: "\f0d7";
+  color: #fff;
+ }
+ div.dws-menu label.toggleSubmenu .fa{
+  position: absolute;
+  top: 15px;
+  right: 30px;
+ }
+ div.dws-menu input.toggleSubmenu:checked ~ label.toggleSubmenu .fa::before{
+  content: "\f0d8";
+  color: #ffffff;
+ }
+}

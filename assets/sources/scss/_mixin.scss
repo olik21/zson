@@ -1,0 +1,23 @@
+// Placeholder
+@mixin placeholder {
+  &::-webkit-input-placeholder       { @content }
+  &::-moz-placeholder                { @content }
+  &:-moz-placeholder                 { @content }
+  &:-ms-input-placeholder            { @content }
+}
+
+@mixin displayflex ( $direction: row, $wrap: wrap, $justify-content: space-between, $align-items: stretch, $align-content: stretch){
+	display: flex;
+	flex-direction: $direction;
+	flex-wrap: $wrap;
+	justify-content: $justify-content;
+	align-items: $align-items;
+	align-content: $align-content;
+	
+	display: -webkit-flex;
+	-webkit-flex-direction: $direction;
+	-webkit-flex-wrap: $wrap;
+	-webkit-justify-content: $justify-content;
+	-webkit-align-items: $align-items;
+	-webkit-align-content: $align-content;
+}

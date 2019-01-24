@@ -1,0 +1,51 @@
+.custom-file-input {
+    border: 1px dashed #dde1e6;
+    background-color: #ffffff;
+
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    padding-top: 30px;
+    padding-bottom: 30px;
+
+    & img {
+        margin-bottom: 30px;
+    }
+
+    & b {
+        color: #3b4256;
+        font-size: 14px;
+        font-weight: 400;
+    }
+
+    & span {
+        color: #848e99;
+        font-size: 12px;
+        font-weight: 400;
+    }
+
+    &::before {
+        content:'';
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: transparent;
+    }
+
+    &#{&}--active {
+        border: 1px dashed #3b4256;
+    }
+}
+
+.custom-file-input__images {
+    padding-left: 15px;
+    font-size: 12px;
+
+    margin: 0;
+}

@@ -1,0 +1,263 @@
+.container-sidebar.user-page {
+    display: flex;
+    width: 100%;
+    padding: 0 0 50px 0;
+
+    &#{&}--clm {
+        flex-direction: column;
+    }
+
+    &#{&}--flex {
+        flex-direction: column;
+
+        @media (min-width: 992px) {
+            flex-direction: row;
+        }
+    }
+
+    @media (min-width: 992px) {
+        float: left;
+        max-width: 750px;
+        padding: 0 10px 50px 10px;
+    }
+
+    @media (min-width: 1200px) {
+        max-width: 920px;
+        padding: 0 30px 50px 30px;
+    }
+}
+
+.user-page__container {
+    width: 100%;
+    margin-right: 30px;
+}
+
+.user-page__requests-list {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+.user-page__requests-item {
+    background-color: #fff;
+    border-bottom: 1px solid #dde1e6;
+    border-left: 1px solid #dde1e6;
+    border-right: 1px solid #dde1e6;
+
+    &:nth-child(1) {
+        border-top: 1px solid #dde1e6;
+    }
+
+    &.dropdown {
+        &::after {
+            border: solid #3b4256;
+            border-width: 0 3px 3px 0;
+        }
+    }
+
+    & span {
+        display: block;
+        padding: 15px;
+    }
+
+    & p {
+        display: none;
+        background-color: #fff;
+        padding: 30px 15px;
+
+    }
+
+    &.active {
+        background-color: #d1dbeb;
+    }
+
+    &.active p {
+        display: block;
+        margin: 0;
+        margin-block-end: 0;
+    }
+}
+
+.user-page {
+    flex-shrink: 0;
+}
+
+.user-page__checkbox {
+    display: none;
+
+    &:checked + .user-page__chk-label::before {
+        background-image: url(../img/checked-label.png);
+        border: none;
+        background-size: 100%;
+    }
+}
+
+.user-page__chk-label {
+    padding-left: 40px;
+    position: relative;
+    display: block;
+
+    &:before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 24px;
+        height: 24px;
+        border-radius: 3px;
+        border: 1px solid #e3e6ec;
+        background-color: #f5f7fb;
+    }
+}
+
+.user-page__input-wrapper {
+    margin-bottom: 10px;
+
+    &#{&}--inline {
+        margin-top: 40px;
+
+        @media (min-width: 768px) {
+            display: flex;
+        }
+    }
+}
+
+.user-page__submit-btn {
+    margin-top: 20px;
+    width: 256px;
+    flex-shrink: 0;
+
+    @media (min-width: 768px) {
+        margin-top: 0;
+        margin-left: 30px;
+    }
+}
+
+.user-page__input-wrapper .user-page__input {
+    padding: 15px;
+}
+
+.user-page__input-clmn {
+    width: 100%;
+}
+
+.user-page__input-wrapper--inline .input-wrapper__label {
+    top: 10px;
+}
+
+.user-page__input-wrapper--inline .input-wrapper__input:not([type=file]):focus + .input-wrapper__label {
+    top: 0;
+    font-size: 13px;
+}
+
+.user-page__title {
+    color: #3b4256;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 30px;
+
+    margin-bottom: 40px;
+}
+
+.user-page__form {
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.user-page__form-columns {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+
+    @media (min-width: 992px) {
+        flex-direction: row;
+    }
+}
+
+.user-page__form-column {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    &:nth-child(2) {
+        @media (min-width: 768px) {
+            max-width: 350px;
+            margin-left: 30px;
+        }
+    }
+}
+
+.user-page__input-wrapper {
+    margin-bottom: 30px;
+}
+
+.user-page__inputs-line {
+    display: flex;
+
+    @media (max-width: 767px) {
+        flex-direction: column;
+    }
+
+    & > div {
+        flex-shrink: 0;
+        width: 100%;
+        margin-bottom: 15px;
+
+
+        @media (min-width: 768px) {
+            width: calc(50% - 15px);
+        }
+    }
+
+    & > div:nth-child(2) {
+        @media (min-width: 768px) {
+            margin-left: 30px;
+        }
+
+    }
+
+    & .input-wrapper__input:focus + .input-wrapper__label {
+        top: 0;
+        font-size: 12px;
+    }
+
+    & .input-wrapper__label {
+        top: 10px;
+    }
+
+    & .selectric {
+        padding: 8px 25px 8px 15px;
+    }
+}
+
+.user-page__subtitle {
+    color: #3b4256;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.user-page__found-list {
+    padding: 0;
+    margin: 0;
+
+    list-style-type: none;
+}
+
+.user-page__found-list-item {
+    margin-bottom: 20px;
+
+    & b {
+        color: #3b4256;
+        font-size: 18px;
+        font-weight: 400;
+    }
+
+    & p {
+        margin: 0;
+        color: #848e99;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 24px;
+    }
+}

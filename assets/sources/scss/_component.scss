@@ -1,0 +1,143 @@
+.text-center { text-align: center;}
+.text-left { text-align: left;}
+.text-right { text-align: right;}
+
+button, .button, .btn, input[type="submit"] {
+  border-radius: 2px;
+  border: none;
+  height: 50px;
+  
+  background-color: $dark-blue;
+  color: $white;
+  font-size:18px;
+  
+  outline: none;
+    &:focus, &:active {
+        border-color: $gray;
+    }
+  cursor: pointer;
+  &.blue{
+    background-color: $blue;
+  }
+  &.white{
+    background-color: $white;
+    color: $dark-blue;
+  }
+  &.btn-sel{
+    border-radius: 2px;
+    height: 65px;
+    box-shadow: 0px 3px 7px 0px rgba(162, 162, 162, 0.35);
+    width: 220px;
+ 
+    background-color: $white;
+    color: $purple;
+    font-size:18px;
+    text-align: center;
+    &.small {
+        height: 50px;
+      }
+  }
+  &.padd{
+    padding: 10px 30px;
+  }
+
+}
+
+input[type="text"], select {
+    border-radius: 2px;
+    height: 50px;
+    background-color: $white;
+    border: 1px solid #ebeef1;
+    font-size: 16px;
+    color: $light-gray;
+    padding:15px;
+    outline: none;
+    &:focus, &:active {
+        border-color: $gray;
+    }
+}
+select {
+    background-image: url('../img/down-arrow-down.png');
+    background-position: 98% center;
+    background-repeat: no-repeat;
+    padding-right: 35px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    
+
+}
+
+.link-category{
+    font-size: 18px;
+    color: $light-gray;
+    text-decoration: underline;
+    line-height: 1.556;
+    padding-right: 25px;
+    background-image: url('../img/down-arrow.png');
+    background-position: right center;
+    background-repeat: no-repeat;
+    align-self: flex-end;
+}
+
+.filters{
+   @include displayflex($direction: column);
+   padding-top: 7px;
+    .checkbox-label {
+        position: relative;
+        margin-bottom: 0px;
+        display: inline-block;
+        padding-left: 25px;
+        padding-right: 15px;
+        min-height: 20px;
+        line-height: 20.8px;
+        font-family: $main-font;
+        font-size: 16px;
+        font-weight: 400;
+        color: $light-gray;
+        cursor: pointer;
+        
+        i {
+            position: absolute;
+            left: 0;
+            width: 20px;
+            height: 20px;
+                        
+            border: 2px solid $dark-blue;
+            border-radius: 10px;
+            background-color: $white;
+          //  transition: 0.35s;
+            &::after {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+            
+                width: 20px;
+                height: 20px;
+              
+            }
+        }
+        input {
+            display: none;
+            &:checked + i {
+                background-image: url(../img/oval-filter.png);
+                background-repeat: no-repeat;
+                background-position: center center;
+                
+                &::after {
+                 left: 10px;   
+                }
+            }
+        }
+    }
+
+}
+  
+
+
+
+   
+
+    
+

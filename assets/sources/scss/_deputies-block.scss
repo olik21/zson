@@ -1,0 +1,116 @@
+.deputies-block {
+    display: none;
+    margin-bottom: 35px;
+
+    &.active {
+        display: block;
+    }
+}
+
+.deputies-block__link-list {
+    display: block;
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+
+    @media (min-width: 768px) {
+        flex-direction: row;
+    }
+}
+
+.deputies-block__tab-link {
+    padding: 15px;
+    color: #3b4256;
+    font-size: 18px;
+    font-weight: 400;
+
+    cursor: pointer;
+
+    &.active {
+        font-weight: 700;
+        border-bottom: 3px solid #183092;
+    }
+}
+
+.deputies-block__content {
+    height: 536px;
+    border: 1px solid #eceff4;
+    background-color: #ffffff;
+    padding: 30px 15px 40px;
+
+    overflow-y: auto;
+}
+
+.deputies-block .selectric {
+    max-width: 340px;
+    margin-bottom: 20px;
+}
+
+.deputies-block__tab {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.deputies-block__item {
+    display: flex;
+    flex-direction: column;
+    max-width: 340px;
+    margin-bottom: 40px;
+
+    @media (min-width: 768px) {
+        &:nth-child(2n+1) {
+            margin-right: 30px;
+        }
+    }
+}
+
+.deputies-block__card {
+    margin-bottom: 15px;
+    padding: 12px;
+    box-shadow: 0 1px 9px 1px #ececec;
+    background-color: #fff;
+
+    display: flex;
+    align-items: flex-start;
+
+    & img {
+        max-width: 86px;
+        height: auto;
+        margin-right: 15px;
+    }
+
+    & p {
+        color: #3b4256;
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 18px;
+
+        margin-bottom: 5px !important;
+    }
+}
+
+.deputies-block__card-title {
+    color: #3b4256;
+    font-size: 16px;
+    line-height: 1.1;
+    font-weight: 700;
+
+    padding-top: 10px;
+    margin-bottom: 20px;
+}
+
+.deputies-block__link {
+    margin-left: auto;
+    margin-right: 15px;
+    color: #3377ff;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    text-decoration: underline;
+
+    &:hover,
+    &:focus {
+        text-decoration: none;
+    }
+}
